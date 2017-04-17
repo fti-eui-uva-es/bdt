@@ -1,5 +1,20 @@
 <?php
-class Module {
-	// TODO: Implement default methods for Module
+abstract class Module {
+	
+	/**
+	 * Init
+	 */
+	public function __init() {
+		// Nothing
+	}
+	
+	
+	/**
+	 * Shutdown
+	 */
+	public function __shutdown() {
+		// Nothing
+	}
+	 
 }
 ?>

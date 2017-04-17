@@ -1,3 +1,3 @@
 <?php
-// TODO: Load /app/init.php script
+require_once __DIR__ . "/app/init.php"
 ?>
