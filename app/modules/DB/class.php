@@ -19,7 +19,13 @@ class DB extends Module {
 	 * Init
 	 */
 	public static function __init() {
-		// TODO: initialize connection
+		// Create MySQLi connection
+		self::$connection = new mysqli(
+			CONFIG['db_host'],
+			CONFIG['db_user'], 
+			CONFIG['db_pass'],
+			CONFIG['db_database']
+		);
 	}
 	
 	
