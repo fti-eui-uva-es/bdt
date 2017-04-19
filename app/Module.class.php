@@ -4,7 +4,7 @@ abstract class Module {
 	/**
 	 * Init
 	 */
-	public function __init() {
+	public static function __init() {
 		// Nothing
 	}
 	
@@ -12,7 +12,7 @@ abstract class Module {
 	/**
 	 * Shutdown
 	 */
-	public function __shutdown() {
+	public static function __shutdown() {
 		// Nothing
 	}
 	 

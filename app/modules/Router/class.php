@@ -1,5 +1,5 @@
 <?php
-class Router {
+class Router extends Module {
 	// TODO: Implement methods
 }
 ?>

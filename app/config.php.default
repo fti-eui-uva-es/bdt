@@ -1,0 +1,9 @@
+<?php
+// Copy this file to /app/config.php
+$CONFIG = [
+	"db_host" => "localhost",
+	"db_user" => "root",
+	"db_pass" => "",
+	"db_database" => "bdt"
+];
+?>
