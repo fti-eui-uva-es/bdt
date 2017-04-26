@@ -7,12 +7,34 @@ class DB extends Module {
 	 * Query
 	 *
 	 * @param {String} MySQL query
-	 * @param {Array} [Parameters] 
 	 * @return {Query} Result
 	 */
-	public static function query($query, $params=[]) {
-		// TODO
+	public static function query($query) {
+		require_once __DIR__ . "/Query.class.php";
+		return new Query($query, self::$connection);
 	}
+	
+	
+	/**
+	 * Sanitize
+	 *
+	 * @param {mixed} Value
+	 * @param {String} Type
+	 * @return {String} Sanitized value
+	 */
+	public static function sanitize($value, $type="text") {
+		// In case of number
+		if ($type == "number") return floatval($value);
+		
+		// Escape string
+		$res = self::$connection->real_escape_string($value);
+		
+		// In case of field
+		if ($type == "field") return "`$res`";
+
+		// In case of text
+		return "'$res'";
+	} 
 	
 	
 	/**
@@ -20,12 +42,17 @@ class DB extends Module {
 	 */
 	public static function __init() {
 		// Create MySQLi connection
-		self::$connection = new mysqli(
-			CONFIG['db_host'],
-			CONFIG['db_user'], 
-			CONFIG['db_pass'],
-			CONFIG['db_database']
-		);
+		try {
+			self::$connection = new mysqli(
+				CONFIG['db_host'],
+				CONFIG['db_user'], 
+				CONFIG['db_pass'],
+				CONFIG['db_database']
+			);
+			self::$connection->set_charset('utf8');
+		} catch (Exception $e) {
+			App::die();
+		}
 	}
 	
 	
@@ -33,7 +60,8 @@ class DB extends Module {
 	 * Shutdown
 	 */
 	public static function __shutdown() {
-		// TODO: close connection
+		// Close MySQLi connection
+		self::$connection->close();
 	}
 	 
 }
