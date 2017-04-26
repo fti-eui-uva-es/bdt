@@ -27,6 +27,7 @@ class App {
 	 */
 	static public function die() {
 		// TODO
+		die;
 	}
 }
 ?>
