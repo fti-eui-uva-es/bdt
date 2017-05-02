@@ -42,17 +42,18 @@ class DB extends Module {
 	 */
 	public static function __init() {
 		// Create MySQLi connection
-		try {
-			self::$connection = new mysqli(
-				CONFIG['db_host'],
-				CONFIG['db_user'], 
-				CONFIG['db_pass'],
-				CONFIG['db_database']
-			);
-			self::$connection->set_charset('utf8');
-		} catch (Exception $e) {
-			App::die();
-		}
+		self::$connection = new mysqli(
+			CONFIG['db_host'],
+			CONFIG['db_user'], 
+			CONFIG['db_pass'],
+			CONFIG['db_database']
+		);
+		
+		// Verify successful connection
+		if (self::$connection->connect_errno) App::die();
+		
+		// Set connection charset
+		self::$connection->set_charset('utf8');
 	}
 	
 	
