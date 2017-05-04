@@ -7,11 +7,30 @@ class DB extends Module {
 	 * Query
 	 *
 	 * @param {String} MySQL query
-	 * @return {Query} Result
+	 * @return {mixed} Result
 	 */
 	public static function query($query) {
-		require_once __DIR__ . "/Query.class.php";
-		return new Query($query, self::$connection);
+		// Prepare output
+		$output = array(
+			"success" => false,
+			"rows" => array()
+		);
+		
+		// Execute query and save result
+		$result = self::$connection->query($query);
+		
+		// Check for value result
+		if ($result === true) {
+			$output["success"] = true;
+		} elseif ($result !== false) {
+			$output["success"] = true;
+			$output["rows"] = mysqli_fetch_all($result, MYSQLI_BOTH);
+			$result->free();
+			$result->close();
+		}
+		
+		// Return result
+		return $output;
 	}
 	
 	
