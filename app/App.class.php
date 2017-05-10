@@ -1,6 +1,8 @@
 <?php
 class App {
 	
+	private static $mods = array();
+	
 	/**
 	 * Load module
 	 * 
@@ -16,7 +18,8 @@ class App {
 		// Load module and dependecies
 		require_once __DIR__ . "/Module.class.php";
 		require_once $path;
-		$mod::__init();
+		array_push(self::$mods, $mod);
+		$mod::__init();	
 
 		return true;
 	}
@@ -26,7 +29,10 @@ class App {
 	 * Die
 	 */
 	static public function die() {
-		// TODO
+		// Shutdown modules
+		foreach (self::$mods as $mod) $mod::__shutdown();
+		
+		// Abort execution
 		die;
 	}
 }

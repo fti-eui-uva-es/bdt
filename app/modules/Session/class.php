@@ -1,5 +1,9 @@
 <?php
 class Session extends Module {
-	// TODO: Implement methods
+	
+	public static $user = NULL;
+	public static $device = NULL;
+	public static $isLogged = false;
+	
 }
 ?>
