@@ -73,6 +73,9 @@ class DB extends Module {
 		
 		// Set connection charset
 		self::$connection->set_charset('utf8');
+		
+		// Auto-create tables
+		// TODO 
 	}
 	
 	
