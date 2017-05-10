@@ -6,7 +6,8 @@ class Router extends Module {
 	 */
 	public static function __init() {
 		// Get path of file to load
-		$is_post = ($_SERVER['REQUEST_METHOD'] == "POST");
+		$is_post = isset($_SERVER['REQUEST_METHOD']) ?
+			($_SERVER['REQUEST_METHOD'] == "POST") : "GET";
 		$mod = self::getParam(0);
 		if ($mod == "") $mod = "Welcome";
 		$path = __DIR__ . "/../" . ucfirst($mod) .
@@ -38,7 +39,9 @@ class Router extends Module {
 			if (isset($_POST[$index])) $res = $_POST[$index];
 		} elseif (is_numeric($index)) {
 			$index = intval($index);
-			$url = explode("?", $_SERVER['REQUEST_URI']);
+			$uri = isset($_SERVER['REQUEST_URI']) ?
+				$_SERVER['REQUEST_URI'] : "/";
+			$url = explode("?", $uri);
 			$url = trim($url[0], "/");
 			$url = explode("/", $url);
 			if (in_array($index, $url)) $res = $url[$index];

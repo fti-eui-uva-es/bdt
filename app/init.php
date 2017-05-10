@@ -13,7 +13,11 @@ require_once __DIR__ . "/App.class.php";
 
 // Load main modules
 App::loadModule("DB");
-App::loadModule("Session");
-App::loadModule("Router");
+if (isset($_SERVER['REQUEST_URI'])) {
+	App::loadModule("Session");
+	App::loadModule("Router");
+} else {
+	echo "[i] Entering console mode for BdT\n\n\n";
+}
 
 ?>
