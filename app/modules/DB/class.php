@@ -25,7 +25,6 @@ class DB extends Module {
 		} elseif ($result !== false) {
 			$output["success"] = true;
 			$output["rows"] = mysqli_fetch_all($result, MYSQLI_BOTH);
-			$result->free();
 			$result->close();
 		}
 		
@@ -73,9 +72,6 @@ class DB extends Module {
 		
 		// Set connection charset
 		self::$connection->set_charset('utf8');
-		
-		// Auto-create tables
-		// TODO 
 	}
 	
 	
