@@ -52,7 +52,17 @@ class DB extends Module {
 
 		// In case of text
 		return "'$res'";
-	} 
+	}
+	
+	
+	/**
+	 * Get last insert ID
+	 *
+	 * @return {int} lastInsertID
+	 */
+	public static function getLastInsertID() {
+		return self::$connection->insert_id;
+	}
 	
 	
 	/**
