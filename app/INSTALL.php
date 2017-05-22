@@ -63,7 +63,7 @@ DB:: query('CREATE TABLE `user` (
   `user_email` varchar(100) NOT NULL,
   `user_birthday` date NOT NULL,
   `user_superuser` tinyint(1) NOT NULL,
-  `user_suspended` tinyint(1) NOT NULL DEFAULT '0',
+  `user_suspended` tinyint(1) NOT NULL DEFAULT \'0\',
   `user_expelled` tinyint(1) NOT NULL,
   `user_time` int(11) NOT NULL,
   `user_metadata` varchar(5000) NOT NULL
@@ -90,9 +90,6 @@ DB::query('ALTER TABLE `user`
 
 DB: query('ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT');
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 // Exit installer
 echo "[i] Finished installing database. Exiting...\n";
