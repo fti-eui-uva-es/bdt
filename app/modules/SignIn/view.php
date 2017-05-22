@@ -4,19 +4,26 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<title>Banco de tiempo (Segovia)</title>
-		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="http://localhost/css/app.css">
+		<link rel="stylesheet" href="http://localhost/css/signIn.css">
 	</head>
 	<body>
 		<!--Cabecera con logo-->
 		<header>
-			<img src="encabezado.jpg" alt="Banco de tiempo">
-			<h1>¿Qué es el banco de tiempo?</h1>
+			<img src="http://localhost/pictures/encabezado.jpg" alt="Banco de tiempo">
+			<h1>Inicio Sesión</h1>
 		</header>
 		<main class="center">
 			<br><br><br><br>
-			<a href="" class="button" target="_blank">INICIO SESIÓN</a>
-			<br><br><br><br><br><br>
-			<a href="" class="button" target="_blank">REGISTRARSE</a>		
+			<form method="post"  action="pagina">
+				<span class="tipo" name="nombre">USUARIO: </span>
+				<input type="text">
+				<br><br><br><br><br><br>
+				<span class="tipo" name="pass">CONTRASEÑA: </span>
+				<input type="password">
+				<br><br><br><br>
+				<input type="submit" class="button" value="Entrar">
+			</form>					
 		</main>
 		<footer class="center">
 			<p class="inline">Ayuntamiento de Segovia &copy;</p>

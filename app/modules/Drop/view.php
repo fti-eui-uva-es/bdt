@@ -4,12 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<title>Banco de tiempo (Segovia)</title>
-		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="http://localhost/css/app.css">
+		<link rel="stylesheet" href="http://localhost/css/drop.css">
 	</head>
 	<body>
 		<!--Cabecera con logo-->
 		<header>
-			<img src="encabezado.jpg" alt="Banco de tiempo">
+			<img src="http://localhost/pictures/encabezado.jpg" alt="Banco de tiempo">
 			<h1>Eliminar cuenta</h1>
 		</header>
 		<main class="center">
