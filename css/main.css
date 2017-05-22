@@ -1,0 +1,29 @@
+/* MAIN */
+
+.button {
+	text-decoration: none;
+	background: linear-gradient(180deg, #ed6d6d, #c31713);
+	border-radius: 13px;
+	-webkit-border-radius: 13;
+	-moz-border-radius: 13;
+	box-shadow: 3px 3px 4px #d1d1d1;
+	-webkit-box-shadow: 3px 3px 4px #d1d1d1;
+	-moz-box-shadow: 3px 3px 4px #d1d1d1;
+	font-size: 40px;
+	padding: 10px 50px;
+	color: rgba(255,255,255,1);
+}
+
+.button:hover {	background: linear-gradient(180deg, #c31713, #ed6d6d) }
+
+main form .tipo{
+	font-size: 20px;
+}
+
+input {	border:1px solid #c31713 }
+
+main:after {
+	content: "";
+	display: block;
+	height: 50px;
+}
