@@ -1,0 +1,19 @@
+		<script src="jquery.js"></script>
+		<script>
+		$('form').submit(function(e) {
+			e.preventDefault();
+			$.post('<?php echo $_SERVER['REQUEST_URI']; ?>', $(this).serialize()).done(function(res) {
+				console.log(res);
+				if (res.length === 0) {
+					alert('Formulario enviado correctamente');
+				} else {
+					var salida = '';
+					for (var i=0; i<res.length; i++) {
+						salida += res[i].msg + '\n';
+					}
+					alert('TIENES ERRORES:\n\n' + salida.trim());
+				}
+			}).fail(function() {
+				alert('Desconectate del WiFi de la UVa');
+			});
+		});
