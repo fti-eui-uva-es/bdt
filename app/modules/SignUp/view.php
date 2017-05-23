@@ -4,13 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<title>Banco de tiempo (Segovia)</title>
-		<link rel="stylesheet" href="http://localhost/css/app.css">
-		<link rel="stylesheet" href="http://localhost/css/signup.css">
+		<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];  ?>/css/app.css">
+		<link rel="stylesheet" href="http://<?php echo $_SERVER["HTTP_HOST"];  ?>/css/signup.css">
 	</head>
 	<body>
 		<!--Cabecera con logo-->
 		<header>
-			<img src="http://localhost/pictures/encabezado.jpg" alt="Banco de tiempo">
+			<img src="http://<?php echo $_SERVER["HTTP_HOST"];  ?>/pictures/encabezado.jpg" alt="Banco de tiempo">
 			<h1>Registrar</h1>
 		</header>
 		<main class="center">
